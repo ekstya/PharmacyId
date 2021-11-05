@@ -5,18 +5,18 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginPage extends MyFrame implements ActionListener {
-    JLabel title = new JLabel("MASUK");
+class RegisterPage extends MyFrame implements ActionListener {
+    JLabel title = new JLabel("REGISTRASI");
 
     JLabel usernameLabel = new JLabel("Username");
     JTextField usernameField = new JTextField();
     JLabel passwordLabel = new JLabel("Password");
     JPasswordField passwordField = new JPasswordField();
 
-    JButton loginButton = new JButton("Masuk");
     JButton registerButton = new JButton("Registrasi");
+    JButton loginButton = new JButton("Masuk");
 
-    public LoginPage() {
+    public RegisterPage() {
         super(600, 420);
         title.setFont(title.getFont().deriveFont(20f));
         title.setBounds(0, 30, 600, 24);
@@ -33,19 +33,19 @@ public class LoginPage extends MyFrame implements ActionListener {
         passwordField.setBounds(150, 170, 300, 40);
         add(passwordField);
 
-        loginButton.setFocusable(false);
-        loginButton.setBounds(150, 250, 300, 40);
-        loginButton.setBackground(new Color(0x3948db));
-        loginButton.setForeground(Color.white);
-        loginButton.addActionListener(this);
-        add(loginButton);
-
         registerButton.setFocusable(false);
-        registerButton.setBounds(150, 300, 300, 44);
-        registerButton.setBackground(Color.white);
-        registerButton.setForeground(new Color(0x3948db));
+        registerButton.setBounds(150, 250, 300, 44);
+        registerButton.setBackground(new Color(0x3948db));
+        registerButton.setForeground(Color.white);
         registerButton.addActionListener(this);
         add(registerButton);
+
+        loginButton.setFocusable(false);
+        loginButton.setBounds(150, 300, 300, 40);
+        loginButton.setBackground(Color.white);
+        loginButton.setForeground(new Color(0x3948db));
+        loginButton.addActionListener(this);
+        add(loginButton);
 
         setVisible(true);
     }
@@ -54,10 +54,15 @@ public class LoginPage extends MyFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == loginButton) {
             dispose();
-            new DashboardPage();
+            new LoginPage();
         } else if (e.getSource() == registerButton) {
+            JOptionPane.showMessageDialog(
+                    null,
+                    "Registrasi akun berhasil",
+                    "WOW!",
+                    JOptionPane.INFORMATION_MESSAGE);
             dispose();
-            new RegisterPage();
+            new LoginPage();
         }
     }
 }
