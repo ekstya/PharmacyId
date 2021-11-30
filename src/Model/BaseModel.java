@@ -8,18 +8,14 @@ public class BaseModel {
     private String dbUrl;
     private String dbUser;
     private String dbPassword;
-    public Connection connection;
+    public static Connection connection;
 
-    public BaseModel(){
+    public BaseModel() throws SQLException {
         dbUrl = "jdbc:postgresql://localhost/pharmacyId";
         dbUser = "postgres";
         dbPassword = "postgres";
 
-        try {
-            connection = DriverManager.getConnection(dbUrl,dbUser, dbPassword);
-            System.out.println("Berhasil terhubung ke database");
-        }catch (SQLException except){
-            System.out.println("Terjadi Kesalahan dalam database: "+except.getMessage());
-        }
+        connection = DriverManager.getConnection(dbUrl,dbUser, dbPassword);
+
     }
 }
