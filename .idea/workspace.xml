@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36a7fe06-837e-4d1d-bef9-4985f395929b" name="Changes" comment="" />
+    <list default="true" id="36a7fe06-837e-4d1d-bef9-4985f395929b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BaseModel.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +31,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -48,6 +54,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="JLabelWithIcon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -85,6 +92,8 @@
       <workItem from="1637835212504" duration="119000" />
       <workItem from="1638097138389" duration="3843000" />
       <workItem from="1638247155461" duration="77000" />
+      <workItem from="1638266654684" duration="307000" />
+      <workItem from="1638266973291" duration="513000" />
     </task>
     <servers />
   </component>

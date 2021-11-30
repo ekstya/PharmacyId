@@ -11,9 +11,9 @@ public class BaseModel {
     public Connection connection;
 
     public BaseModel(){
-        dbUrl = "jdbc:postgresql://localhost/PharmacyId";
+        dbUrl = "jdbc:postgresql://localhost/pharmacyId";
         dbUser = "postgres";
-        dbPassword = "eka280602";
+        dbPassword = "postgres";
 
         try {
             connection = DriverManager.getConnection(dbUrl,dbUser, dbPassword);
