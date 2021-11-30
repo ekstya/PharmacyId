@@ -17,9 +17,9 @@ public class BaseModel {
 
         try {
             connection = DriverManager.getConnection(dbUrl,dbUser, dbPassword);
-            System.out.println("Berhasil");
-        }catch (SQLException e){
-            System.out.println("Terjadi Kesalahan : "+e.getMessage());
+            System.out.println("Berhasil terhubung ke database");
+        }catch (SQLException except){
+            System.out.println("Terjadi Kesalahan dalam database: "+except.getMessage());
         }
     }
 }
