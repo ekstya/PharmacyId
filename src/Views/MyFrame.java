@@ -3,7 +3,7 @@ package Views;
 import javax.swing.JFrame;
 import java.awt.*;
 
-public class MyFrame extends JFrame {
+public abstract class MyFrame extends JFrame {
     MyFrame(int width, int height) {
         setTitle("Pharmacy.Id");
         setLayout(null);

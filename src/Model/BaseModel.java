@@ -4,22 +4,15 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class BaseModel {
-    private String dbUrl;
-    private String dbUser;
-    private String dbPassword;
-    public Connection connection;
+public abstract class BaseModel {
 
-    public BaseModel(){
-        dbUrl = "jdbc:postgresql://localhost/PharmacyId";
-        dbUser = "postgres";
-        dbPassword = "eka280602";
+    protected Connection connection;
 
-        try {
-            connection = DriverManager.getConnection(dbUrl,dbUser, dbPassword);
-            System.out.println("Berhasil terhubung ke database");
-        }catch (SQLException except){
-            System.out.println("Terjadi Kesalahan dalam database: "+except.getMessage());
-        }
+    public BaseModel() throws SQLException {
+        String dbUrl = "jdbc:postgresql://localhost/PharmacyId";
+        String dbUser = "postgres";
+        String dbPassword = "postgres";
+
+        connection = DriverManager.getConnection(dbUrl, dbUser, dbPassword);
     }
 }
