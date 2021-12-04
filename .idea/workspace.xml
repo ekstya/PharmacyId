@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="36a7fe06-837e-4d1d-bef9-4985f395929b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/QueryModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PharmacyId.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PharmacyId.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MyFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/MyFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/BaseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/BaseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MyFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +38,9 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
@@ -61,6 +61,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.tabs" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="JLabelWithIcon" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -97,6 +98,10 @@
       <workItem from="1637795157632" duration="1559000" />
       <workItem from="1637835212504" duration="119000" />
       <workItem from="1638097138389" duration="3843000" />
+      <workItem from="1638247155461" duration="77000" />
+      <workItem from="1638266654684" duration="307000" />
+      <workItem from="1638266973291" duration="513000" />
+      <workItem from="1638267495910" duration="5180000" />
     </task>
     <servers />
   </component>

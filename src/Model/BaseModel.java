@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public abstract class BaseModel {
 
-    protected Connection connection;
+    protected static Connection connection;
 
     public BaseModel() throws SQLException {
         String dbUrl = "jdbc:postgresql://localhost/PharmacyId";
