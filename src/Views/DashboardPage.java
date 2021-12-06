@@ -42,7 +42,10 @@ public class DashboardPage extends MyFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == logout) {
+        if (e.getSource() == gudang) {
+            dispose();
+            new WarehousePage();
+        } else if (e.getSource() == logout) {
             dispose();
             new LoginPage();
         } else {
