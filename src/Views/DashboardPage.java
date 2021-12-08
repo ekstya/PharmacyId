@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.util.Objects;
 
 public class DashboardPage extends MyFrame implements ActionListener {
@@ -42,14 +43,17 @@ public class DashboardPage extends MyFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == gudang) {
+        try {
+            if (e.getSource() == gudang) {
+                new WarehousePage();
+            } else if (e.getSource() == logout) {
+                new LoginPage();
+            } else {
+                JOptionPane.showMessageDialog(null, "Belum dapat diimplementasikan");
+            }
             dispose();
-            new WarehousePage();
-        } else if (e.getSource() == logout) {
-            dispose();
-            new LoginPage();
-        } else {
-            JOptionPane.showMessageDialog(null, "Belum dapat diimplementasikan");
+        } catch (Exception exception){
+            JOptionPane.showMessageDialog(null, exception);
         }
     }
 }

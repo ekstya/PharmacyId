@@ -3,11 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="36a7fe06-837e-4d1d-bef9-4985f395929b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehousePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehousePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/WarehouseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/WarehouseModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/WarehouseForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WarehouseForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/WarehousePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WarehousePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

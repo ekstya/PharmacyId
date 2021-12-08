@@ -1,17 +1,25 @@
 package Views;
 
+import Model.WarehouseModel;
+
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.Objects;
 
 public class WarehouseForm extends MyFrame implements ActionListener {
-    JTextField fieldNamaBarang, fieldJenisBarang, fieldStok, fieldHarga;
-    JButton addButton, backButton;
+    int id;
+    JLabel title;
+    JTextField fieldNamaBarang, fieldStok, fieldHarga;
+    JComboBox<String> fieldJenisBarang;
+    JButton addProductTypeButton, addButton, backButton, updateButton;
 
-    WarehouseForm() {
-        super(600, 500);
-        JLabel title = new JLabel("Tambah Barang");
-        title.setFont(title.getFont().deriveFont(20f));
+    WarehouseForm() throws SQLException {
+        super(600, 520);
+        title = new JLabel("Tambah Barang");
+        title.setFont(title.getFont().deriveFont(18f));
         title.setBounds(0, 30, 600, 24);
         title.setHorizontalAlignment(JLabel.CENTER);
         add(title);
@@ -26,9 +34,22 @@ public class WarehouseForm extends MyFrame implements ActionListener {
         JLabel jenisBarang = new JLabel("Jenis Barang");
         jenisBarang.setBounds(150, 150, 300, 20);
         add(jenisBarang);
-        fieldJenisBarang = new JTextField();
-        fieldJenisBarang.setBounds(150, 170, 300, 40);
+        String[] comboBoxList = WarehouseModel.getAllProductTypes();
+        if (comboBoxList.length == 0) {
+            comboBoxList = new String[]{""};
+        }
+        fieldJenisBarang = new JComboBox<String>(comboBoxList);
+        fieldJenisBarang.setBackground(Color.white);
+        fieldJenisBarang.setBounds(150, 170, 250, 40);
+        addProductTypeButton = new JButton("+");
+        addProductTypeButton.setFont(addProductTypeButton.getFont().deriveFont(10f));
+        addProductTypeButton.setBounds(410, 170, 40, 40);
+        addProductTypeButton.setBackground(Color.white);
+        addProductTypeButton.setForeground(new Color(0x3948db));
+        addProductTypeButton.setFocusable(false);
+        addProductTypeButton.addActionListener(this);
         add(fieldJenisBarang);
+        add(addProductTypeButton);
 
         JLabel stok = new JLabel("Stok");
         stok.setBounds(150, 220, 300, 20);
@@ -46,24 +67,67 @@ public class WarehouseForm extends MyFrame implements ActionListener {
 
         addButton = new JButton("Tambahkan");
         addButton.setBounds(150, 360, 300, 40);
+        addButton.setForeground(Color.white);
+        addButton.setBackground(new Color(0x3948db));
         addButton.addActionListener(this);
         add(addButton);
 
+        backButton = new JButton("Kembali");
+        backButton.setBounds(150, 420, 300, 40);
+        backButton.setForeground(new Color(0x3948db));
+        backButton.setBackground(Color.white);
+        backButton.addActionListener(this);
+        add(backButton);
+
         setVisible(true);
+    }
+
+    void setUpdate(int id, String namaBarang, String jenisBarang, String stok, String harga) {
+        this.id = id;
+        title.setText("Ubah Data");
+        fieldNamaBarang.setText(namaBarang);
+        fieldJenisBarang.setSelectedItem(jenisBarang);
+        fieldStok.setText(stok);
+        fieldHarga.setText(harga);
+        remove(addButton);
+
+        updateButton = new JButton("Ubah");
+        updateButton.setBounds(150, 360, 300, 40);
+        updateButton.setForeground(Color.white);
+        updateButton.setBackground(new Color(0x3948db));
+        updateButton.addActionListener(this);
+        add(updateButton);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
             if (e.getSource() == addButton) {
-                System.out.println(fieldNamaBarang.getText());
-                System.out.println(fieldJenisBarang.getText());
-                System.out.println(fieldStok.getText());
-                System.out.println(Integer.parseInt(fieldHarga.getText()));
+                String namaBarang = fieldNamaBarang.getText();
+                String jenisBarang = Objects.requireNonNull(fieldJenisBarang.getSelectedItem()).toString();
+                int stok = Integer.parseInt(fieldStok.getText());
+                int harga = Integer.parseInt(fieldHarga.getText());
 
-                dispose();
+                if (namaBarang.isEmpty() || jenisBarang.isEmpty()) {
+                    throw new Exception("Inputan harus terisi");
+                }
+
+                WarehouseModel.addProduct(namaBarang, harga, stok, jenisBarang);
+                new WarehousePage();
+            } else if (e.getSource() == addProductTypeButton) {
+                new ProductTypeForm();
+            } else if (e.getSource() == updateButton) {
+                String namaBarang = fieldNamaBarang.getText();
+                String jenisBarang = Objects.requireNonNull(fieldJenisBarang.getSelectedItem()).toString();
+                int stok = Integer.parseInt(fieldStok.getText());
+                int harga = Integer.parseInt(fieldHarga.getText());
+
+                WarehouseModel.updateProduct(id, namaBarang, harga, stok, jenisBarang);
+                new WarehousePage();
+            } else if (e.getSource() == backButton) {
                 new WarehousePage();
             }
+            dispose();
         } catch (Exception exception) {
             JOptionPane.showMessageDialog(null, exception);
         }

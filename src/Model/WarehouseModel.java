@@ -1,7 +1,9 @@
 package Model;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class WarehouseModel extends BaseModel {
 
@@ -27,5 +29,112 @@ public class WarehouseModel extends BaseModel {
         ps.executeUpdate();
 
         ps.close();
+    }
+
+
+    public static String[][] getAllProduct() throws SQLException {
+        ArrayList<String[]> products = new ArrayList<String[]>();
+        PreparedStatement ps = connection.prepareStatement(
+                "SELECT * FROM barang"
+        );
+        ResultSet rs = ps.executeQuery();
+
+        while (rs.next()) {
+            String[] line = new String[5];
+            line[0] = rs.getString("id");
+            line[1] = rs.getString("nama_barang");
+            String jenisBarang = "Unknown";
+            ps = connection.prepareStatement(
+                    "SELECT * FROM jenis_barang WHERE id=?"
+            );
+            ps.setInt(1, rs.getInt("fk_id_jenis_barang"));
+            ResultSet rsJenisBarang = ps.executeQuery();
+            if (rsJenisBarang.next()) {
+                jenisBarang = rsJenisBarang.getString("nama_jenis");
+            }
+            line[2] = jenisBarang;
+            line[3] = rs.getString("stok");
+            line[4] = rs.getString("harga");
+
+            products.add(line);
+        }
+
+        return products.toArray(new String[0][0]);
+    }
+
+
+    public static String[] getAllProductTypes() throws SQLException {
+        ArrayList<String> productsTypes = new ArrayList<String>();
+        PreparedStatement ps = connection.prepareStatement(
+                "SELECT * FROM jenis_barang"
+        );
+        ResultSet rs = ps.executeQuery();
+        while (rs.next()) {
+            productsTypes.add(rs.getString("nama_jenis"));
+        }
+
+        return productsTypes.toArray(new String[0]);
+    }
+
+
+    public static void addProductType(String namaJenis) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(
+                "INSERT INTO jenis_barang" +
+                        "(nama_jenis)" +
+                        "VALUES(?)"
+        );
+        ps.setString(1, namaJenis);
+        ps.executeUpdate();
+    }
+
+
+    public static void addProduct(String namaBarang, int harga, int stok, String jenisBarang) throws SQLException {
+        int fk_id_jenis_barang = getJenisBarangFK(jenisBarang);
+        PreparedStatement ps = connection.prepareStatement(
+                "INSERT INTO barang" +
+                        "(nama_barang, harga, stok, fk_id_jenis_barang)" +
+                        "VALUES(?, ?, ?, ?)"
+        );
+        ps.setString(1, namaBarang);
+        ps.setInt(2, harga);
+        ps.setInt(3, stok);
+        ps.setInt(4, fk_id_jenis_barang);
+        ps.executeUpdate();
+    }
+
+    public static void updateProduct
+            (int id,
+             String namaBarang,
+             int harga,
+             int stok,
+             String jenisBarang)
+            throws SQLException {
+        int fk_id_jenis_barang = getJenisBarangFK(jenisBarang);
+        PreparedStatement ps = connection.prepareStatement(
+                "UPDATE barang " +
+                        "SET (nama_barang, harga, stok, fk_id_jenis_barang) = (?, ?, ?, ?) " +
+                        "WHERE id = ?"
+        );
+        ps.setString(1, namaBarang);
+        ps.setInt(2, harga);
+        ps.setInt(3, stok);
+        ps.setInt(4, fk_id_jenis_barang);
+        ps.setInt(5, id);
+        ps.executeUpdate();
+    }
+
+    private static int getJenisBarangFK(String jenisBarang) throws SQLException {
+        PreparedStatement ps = connection.prepareStatement(
+                "SELECT * FROM jenis_barang WHERE nama_jenis=?"
+        );
+        ps.setString(1, jenisBarang);
+        ResultSet rs = ps.executeQuery();
+        int fk_id_jenis_barang;
+        if (rs.next()) {
+            fk_id_jenis_barang = rs.getInt("id");
+        } else {
+            throw new SQLException("id tidak ditemukan");
+        }
+        return fk_id_jenis_barang;
     }
 }

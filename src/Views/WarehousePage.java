@@ -1,17 +1,21 @@
 package Views;
 
+import Model.WarehouseModel;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class WarehousePage extends MyFrame implements ActionListener {
-    JButton backButton;
-    JButton addButton;
-    JButton updateButton;
+    JButton addButton, backButton, updateButton;
+    JTable table;
 
-    WarehousePage() {
+    WarehousePage() throws SQLException {
         super(600, 420);
 
         JLabel title = new JLabel("Gudang");
@@ -20,20 +24,11 @@ public class WarehousePage extends MyFrame implements ActionListener {
         title.setHorizontalAlignment(JLabel.CENTER);
         add(title);
 
-
-        String[][] data = {
-                {"1", "Paracetamol", "Paracetamol", "21", "100000"},
-                {"1", "Paracetamol", "Paracetamol", "21", "100000"},
-                {"1", "Paracetamol", "Paracetamol", "21", "100000"},
-                {"1", "Paracetamol", "Paracetamol", "21", "100000"},
-                {"1", "Paracetamol", "Paracetamol", "21", "100000"},
-                {"1", "Paracetamol", "Paracetamol", "21", "100000"}
-        };
-
+        String[][] products = WarehouseModel.getAllProduct();
+        Arrays.sort(products, Comparator.comparingInt(o -> Integer.parseInt(o[0])));
         String[] columnNames = {"id", "Nama Barang", "Jenis", "Stok", "Harga (Rp)"};
-
-        DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
-        JTable table = new JTable(tableModel);
+        DefaultTableModel tableModel = new DefaultTableModel(products, columnNames);
+        table = new JTable(tableModel);
         table.getTableHeader().setBackground(new Color(0x3948db));
         table.getTableHeader().setForeground(Color.white);
         table.getColumnModel().getColumn(0).setMaxWidth(8);
@@ -72,11 +67,26 @@ public class WarehousePage extends MyFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == backButton) {
+        try {
+            if (e.getSource() == backButton) {
+                new DashboardPage();
+            } else if (e.getSource() == addButton) {
+                new WarehouseForm();
+            } else if (e.getSource() == updateButton) {
+                int selectedRow = table.getSelectedRow();
+                if (selectedRow == -1) {
+                    throw new Exception("Pilih baris yang ingin diubah");
+                }
+                int id = Integer.parseInt(table.getValueAt(selectedRow, 0).toString());
+                String namaBarang = table.getValueAt(selectedRow, 1).toString();
+                String jenisBarang = table.getValueAt(selectedRow, 2).toString();
+                String stok = table.getValueAt(selectedRow, 3).toString();
+                String harga = table.getValueAt(selectedRow, 4).toString();
+                new WarehouseForm().setUpdate(id, namaBarang, jenisBarang, stok, harga);
+            }
             dispose();
-            new DashboardPage();
-        } else if (e.getSource() == addButton) {
-            new WarehouseForm();
+        } catch (Exception exception) {
+            JOptionPane.showMessageDialog(null, exception);
         }
     }
 }
