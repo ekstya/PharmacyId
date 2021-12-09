@@ -18,4 +18,18 @@ public class AuthModel extends BaseModel {
 
         ps.close();
     }
+
+    public static void addAccount(String username, String password) throws SQLException{
+//        String sql = ("INSERT INTO kasir"" + "(username, password)" + "VALUES (?,?)");
+        PreparedStatement ps = connection.prepareStatement("INSERT INTO kasir"
+                + "(username, password)"
+                + "VALUES (?,?)");
+
+        ps.setString(1, username);
+        ps.setString(2, password);
+        ps.executeUpdate();
+        ps.close();
+
+
+    }
 }

@@ -3,15 +3,19 @@
   <component name="ChangeListManager">
     <list default="true" id="36a7fe06-837e-4d1d-bef9-4985f395929b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MyFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/MyFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehousePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehousePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/WarehouseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/WarehouseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/DashboardPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/WarehouseForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WarehouseForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/WarehousePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WarehousePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Model/AuthModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AuthModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +42,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -103,6 +104,7 @@
       <workItem from="1638266654684" duration="307000" />
       <workItem from="1638266973291" duration="513000" />
       <workItem from="1638267495910" duration="5180000" />
+      <workItem from="1639007025350" duration="1089000" />
     </task>
     <servers />
   </component>
