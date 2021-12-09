@@ -28,7 +28,15 @@ public class AuthModel extends BaseModel {
         ps.setString(1, username);
         ps.setString(2, password);
         ps.executeUpdate();
+
+//        int rows = ps.executeUpdate();
+//        if (rows>0){
+//            System.out.println("Data Kasir Berhasil Ditambahkan!");
+//        }else{
+//            System.out.println("Data Kasir Gagal Ditambahkan");
+//        }
         ps.close();
+
 
 
     }

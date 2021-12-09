@@ -1,5 +1,8 @@
 package Views;
 
+import Model.AuthModel;
+import Model.WarehouseModel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -52,17 +55,27 @@ class RegisterPage extends MyFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == loginButton) {
-            dispose();
-            new LoginPage();
-        } else if (e.getSource() == registerButton) {
-            JOptionPane.showMessageDialog(
-                    null,
-                    "Registrasi akun berhasil",
-                    "WOW!",
-                    JOptionPane.INFORMATION_MESSAGE);
-            dispose();
-            new LoginPage();
+        try {
+            if (e.getSource() == loginButton) {
+                dispose();
+                new LoginPage();
+            } else if (e.getSource() == registerButton) {
+                JOptionPane.showMessageDialog(
+                        null,
+                        "Registrasi akun berhasil",
+                        "WOW!",
+                        JOptionPane.INFORMATION_MESSAGE);
+                String username = usernameField.getText();
+                String password = passwordField.getText();
+
+                if (username.isEmpty() || password.isEmpty()) {
+                    throw new Exception("Inputan harus terisi");
+                }
+                AuthModel.addAccount(username, password);
+                dispose();
+                new LoginPage();
+            }
+        }catch(Exception exception){
+            JOptionPane.showMessageDialog(null, exception);
         }
-    }
-}
+    }}
