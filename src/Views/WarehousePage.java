@@ -31,7 +31,7 @@ public class WarehousePage extends MyFrame implements ActionListener {
         table = new JTable(tableModel);
         table.getTableHeader().setBackground(new Color(0x3948db));
         table.getTableHeader().setForeground(Color.white);
-        table.getColumnModel().getColumn(0).setMaxWidth(8);
+        table.getColumnModel().getColumn(0).setMaxWidth(30);
 
         JScrollPane scrollPane = new JScrollPane(table);
         scrollPane.setBounds(0, 80, 600, 200);

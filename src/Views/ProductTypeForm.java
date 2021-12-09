@@ -51,6 +51,7 @@ public class ProductTypeForm extends MyFrame implements ActionListener {
             if (e.getSource() == addButton) {
                 String jenisBarang = fieldJenisBarang.getText();
                 WarehouseModel.addProductType(jenisBarang);
+                JOptionPane.showMessageDialog(null, "Data berhasil ditambahkan");
             }
             new WarehousePage();
             dispose();

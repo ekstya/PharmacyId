@@ -23,7 +23,4 @@ public class Main {
                     JOptionPane.WARNING_MESSAGE);
         }
     }
-    int getSomething() {
-        return 1;
-    }
 }

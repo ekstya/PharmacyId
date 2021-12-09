@@ -46,13 +46,13 @@ public class DashboardPage extends MyFrame implements ActionListener {
         try {
             if (e.getSource() == gudang) {
                 new WarehousePage();
+            } else if (e.getSource() == transaksi) {
+                new TransactionPage();
             } else if (e.getSource() == logout) {
                 new LoginPage();
-            } else {
-                JOptionPane.showMessageDialog(null, "Belum dapat diimplementasikan");
             }
             dispose();
-        } catch (Exception exception){
+        } catch (Exception exception) {
             JOptionPane.showMessageDialog(null, exception);
         }
     }
