@@ -57,12 +57,6 @@ class RegisterPage extends MyFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             if (e.getSource() == loginButton) {
-                String username = usernameField.getText();
-                String password = passwordField.getText();
-                if (username.isEmpty() || password.isEmpty()) {
-                    throw new Exception("Inputan harus terisi");
-                }
-                AuthModel.getAccount(username,password);
                 dispose();
                 new LoginPage();
 

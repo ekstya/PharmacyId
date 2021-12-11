@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="36a7fe06-837e-4d1d-bef9-4985f395929b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MyFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/MyFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/AuthModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AuthModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/LoginPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RegisterPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +109,7 @@
       <workItem from="1639130832350" duration="850000" />
       <workItem from="1639131932240" duration="1331000" />
       <workItem from="1639140516015" duration="10305000" />
+      <workItem from="1639178803040" duration="11257000" />
     </task>
     <servers />
   </component>

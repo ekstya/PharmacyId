@@ -1,5 +1,7 @@
 package Views;
 
+import Model.AuthModel;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -50,14 +52,31 @@ public class LoginPage extends MyFrame implements ActionListener {
         setVisible(true);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == loginButton) {
-            dispose();
-            new DashboardPage();
-        } else if (e.getSource() == registerButton) {
-            dispose();
-            new RegisterPage();
+        try {
+            if (e.getSource() == loginButton) {
+                String username = usernameField.getText();
+                String password = String.valueOf(passwordField.getPassword());
+                if (username.isEmpty() || password.isEmpty()) {
+                    JOptionPane.showMessageDialog(null, "Inputan harus terisi");
+                }
+                AuthModel.getAccount(username, password);
+                AuthModel auth= new AuthModel();
+                int value = auth.val;
+                if (value==1){
+                    dispose();
+                    new DashboardPage();
+                }else if(value==2){
+                    JOptionPane.showMessageDialog(null, "Incorrect Username/Password");
+                    dispose();
+                    new LoginPage();
+                }}
+            else if (e.getSource() == registerButton) {
+                dispose();
+                new RegisterPage();
+        }}
+        catch(Exception exception){
+            JOptionPane.showMessageDialog(null, exception);
         }
     }
 }
