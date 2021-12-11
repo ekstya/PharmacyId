@@ -9,15 +9,17 @@ import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import java.util.Objects;
 
-public class WarehouseForm extends MyFrame implements ActionListener {
-    int id;
+class WarehouseForm extends MyFrame implements ActionListener {
+    int productId, cashierId;
     JLabel title;
     JTextField fieldNamaBarang, fieldStok, fieldHarga;
     JComboBox<String> fieldJenisBarang;
     JButton addProductTypeButton, addButton, backButton, updateButton;
 
-    WarehouseForm() throws SQLException {
+    WarehouseForm(int cashierId) throws SQLException {
         super(600, 520);
+        this.cashierId = cashierId;
+
         title = new JLabel("Tambah Barang");
         title.setFont(title.getFont().deriveFont(18f));
         title.setBounds(0, 30, 600, 24);
@@ -83,7 +85,7 @@ public class WarehouseForm extends MyFrame implements ActionListener {
     }
 
     void setUpdate(int id, String namaBarang, String jenisBarang, String stok, String harga) {
-        this.id = id;
+        this.productId = id;
         title.setText("Ubah Data");
         fieldNamaBarang.setText(namaBarang);
         fieldJenisBarang.setSelectedItem(jenisBarang);
@@ -113,23 +115,23 @@ public class WarehouseForm extends MyFrame implements ActionListener {
                 }
 
                 WarehouseModel.addProduct(namaBarang, harga, stok, jenisBarang);
-                new WarehousePage();
+                new WarehousePage(cashierId);
             } else if (e.getSource() == addProductTypeButton) {
-                new ProductTypeForm();
+                new ProductTypeForm(cashierId);
             } else if (e.getSource() == updateButton) {
                 String namaBarang = fieldNamaBarang.getText();
                 String jenisBarang = Objects.requireNonNull(fieldJenisBarang.getSelectedItem()).toString();
                 int stok = Integer.parseInt(fieldStok.getText());
                 int harga = Integer.parseInt(fieldHarga.getText());
 
-                WarehouseModel.updateProduct(id, namaBarang, harga, stok, jenisBarang);
-                new WarehousePage();
+                WarehouseModel.updateProduct(productId, namaBarang, harga, stok, jenisBarang);
+                new WarehousePage(cashierId);
             } else if (e.getSource() == backButton) {
-                new WarehousePage();
+                new WarehousePage(cashierId);
             }
             dispose();
         } catch (Exception exception) {
-            JOptionPane.showMessageDialog(null, exception);
+            JOptionPane.showMessageDialog(null, exception.getMessage());
         }
     }
 }

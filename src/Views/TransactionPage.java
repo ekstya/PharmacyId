@@ -1,31 +1,32 @@
 package Views;
 
+import Model.TransactionModel;
+
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 
-public class TransactionPage extends MyFrame implements ActionListener {
+class TransactionPage extends MyFrame implements ActionListener {
+    private final int cashierId;
     JTable table;
     JButton addButton, backButton, detailButton;
 
-    TransactionPage() {
+    TransactionPage(int cashierId) throws SQLException {
         super(600, 420);
+        this.cashierId = cashierId;
+
         JLabel title = new JLabel("TRANSAKSI");
         title.setFont(title.getFont().deriveFont(20f));
         title.setHorizontalAlignment(JLabel.CENTER);
         title.setBounds(0, 30, 600, 24);
         add(title);
 
-        String[][] DUMMY_DATA = {
-                {"1", "DUMMY", "DUMMY", "DUMMY"},
-                {"1", "DUMMY", "DUMMY", "DUMMY"},
-                {"1", "DUMMY", "DUMMY", "DUMMY"},
-                {"1", "DUMMY", "DUMMY", "DUMMY"}
-        };
-        String[] columnNames = {"id", "tanggal", "total", "kasir"};
-        DefaultTableModel tableModel = new DefaultTableModel(DUMMY_DATA, columnNames);
+        String[][] transactions = TransactionModel.getAllTransaction();
+        String[] columnNames = {"id", "Tanggal", "Total Harga (Rp)", "Kasir"};
+        DefaultTableModel tableModel = new DefaultTableModel(transactions, columnNames);
         table = new JTable(tableModel);
         table.getTableHeader().setBackground(new Color(0x3948db));
         table.getTableHeader().setForeground(Color.white);
@@ -69,14 +70,32 @@ public class TransactionPage extends MyFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             if (e.getSource() == addButton) {
-                new TransactionForm();
+                new TransactionForm(cashierId);
+            } else if (e.getSource() == detailButton) {
+                int rowIndex = table.getSelectedRow();
+                if (rowIndex == -1) {
+                    throw new Exception("Pilih baris transaksi terlebih dahulu");
+                }
+                String id = table.getValueAt(rowIndex, 0).toString();
+                String tanggal = table.getValueAt(rowIndex, 1).toString();
+                String total = table.getValueAt(rowIndex, 2).toString();
+                String kasir = table.getValueAt(rowIndex, 3).toString();
+
+
+                new DetailTransactionPage(
+                        cashierId,
+                        id,
+                        tanggal,
+                        total,
+                        kasir
+                );
+                dispose();
             } else {
-                new DashboardPage();
+                new MenuOptionPage(cashierId);
             }
             dispose();
         } catch (Exception exception) {
-//            JOptionPane.showMessageDialog(null, excption);
-            exception.printStackTrace();
+            JOptionPane.showMessageDialog(null, exception.getMessage());
         }
     }
 }

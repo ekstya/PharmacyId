@@ -12,7 +12,7 @@ public class WarehouseModel extends BaseModel {
         PreparedStatement ps = connection.prepareStatement(
                 "CREATE TABLE IF NOT EXISTS jenis_barang(" +
                         "id SERIAL PRIMARY KEY," +
-                        "nama_jenis VARCHAR(30) NOT NULL" +
+                        "nama_jenis VARCHAR(30) UNIQUE NOT NULL" +
                         ")"
         );
         ps.executeUpdate();
@@ -20,7 +20,7 @@ public class WarehouseModel extends BaseModel {
         ps = connection.prepareStatement(
                 "CREATE TABLE IF NOT EXISTS barang(" +
                         "id SERIAL PRIMARY KEY," +
-                        "nama_barang VARCHAR(30) NOT NULL," +
+                        "nama_barang VARCHAR(30) UNIQUE NOT NULL," +
                         "harga INTEGER NOT NULL," +
                         "stok INTEGER NOT NULL," +
                         "fk_id_jenis_barang INTEGER NOT NULL REFERENCES jenis_barang(id)" +
@@ -66,7 +66,7 @@ public class WarehouseModel extends BaseModel {
     public static String[] getAllProductTypes() throws SQLException {
         ArrayList<String> productsTypes = new ArrayList<String>();
         PreparedStatement ps = connection.prepareStatement(
-                "SELECT * FROM jenis_barang"
+                "SELECT nama_jenis FROM jenis_barang"
         );
         ResultSet rs = ps.executeQuery();
         while (rs.next()) {
@@ -102,6 +102,7 @@ public class WarehouseModel extends BaseModel {
         ps.executeUpdate();
     }
 
+
     public static void updateProduct
             (int id,
              String namaBarang,
@@ -123,9 +124,10 @@ public class WarehouseModel extends BaseModel {
         ps.executeUpdate();
     }
 
+
     private static int getJenisBarangFK(String jenisBarang) throws SQLException {
         PreparedStatement ps = connection.prepareStatement(
-                "SELECT * FROM jenis_barang WHERE nama_jenis=?"
+                "SELECT id FROM jenis_barang WHERE nama_jenis=?"
         );
         ps.setString(1, jenisBarang);
         ResultSet rs = ps.executeQuery();

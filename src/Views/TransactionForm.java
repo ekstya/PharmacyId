@@ -1,5 +1,6 @@
 package Views;
 
+import Model.TransactionModel;
 import Model.WarehouseModel;
 
 import javax.swing.*;
@@ -11,15 +12,18 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class TransactionForm extends MyFrame implements ActionListener {
+class TransactionForm extends MyFrame implements ActionListener {
+    private final int cashierId;
+
     JTable productsTable, transactionTable;
     JTextField quantityField;
     JButton addItemButton, removeItemButton, addTransactionButton, backButton;
     String[][] products, transaction;
     DefaultTableModel transactionTableModel;
 
-    TransactionForm() throws SQLException {
+    TransactionForm(int cashierId) throws SQLException {
         super(600, 600);
+        this.cashierId = cashierId;
 
         JLabel title = new JLabel("Tambah Transaksi");
         title.setFont(title.getFont().deriveFont(18f));
@@ -56,7 +60,7 @@ public class TransactionForm extends MyFrame implements ActionListener {
         addItemButton.addActionListener(this);
         add(addItemButton);
 
-        String[] transactionTableColumnNames = {"id barang", "nama barang", "kuantitas", "total harga"};
+        String[] transactionTableColumnNames = {"id Barang", "Nama Barang", "Kuantitas", "Total Harga (Rp)"};
         transactionTableModel = new DefaultTableModel(transaction, transactionTableColumnNames);
         transactionTable = new JTable(transactionTableModel);
         transactionTable.getTableHeader().setForeground(Color.white);
@@ -131,11 +135,29 @@ public class TransactionForm extends MyFrame implements ActionListener {
                     throw new Exception("Pilih produk yang ingin dihapus dari daftar");
                 }
                 transactionTableModel.removeRow(rowIndex);
-            } else if (e.getSource() == backButton) {
-                new TransactionPage();
+            } else if (e.getSource() == addTransactionButton) {
+                int totalRow = transactionTableModel.getRowCount();
+
+                if (totalRow == 0) {
+                    throw new Exception("Tambahkan barang yang ingin dibeli terlebih dahulu");
+                }
+
+                int[][] dataTransaksi = new int[totalRow][3];
+                for (int i = 0; i < totalRow; i++) {
+                    dataTransaksi[i][0] = Integer.parseInt(transactionTable.getValueAt(i, 0).toString());
+                    dataTransaksi[i][1] = Integer.parseInt(transactionTable.getValueAt(i, 2).toString());
+                    dataTransaksi[i][2] = Integer.parseInt(transactionTable.getValueAt(i, 3).toString());
+
+                }
+                TransactionModel.addTransaction(cashierId, dataTransaksi);
+                JOptionPane.showMessageDialog(null, "Data berhasil ditambahkan");
+                new TransactionPage(cashierId);
                 dispose();
-            } else {
-                throw new Exception("Fitur belum dapat diimplementasikan");
+
+            }
+            else if (e.getSource() == backButton) {
+                new TransactionPage(cashierId);
+                dispose();
             }
         } catch (Exception exception) {
             JOptionPane.showMessageDialog(null, exception.getMessage());

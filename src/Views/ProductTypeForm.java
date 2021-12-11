@@ -6,14 +6,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.SQLException;
 
-public class ProductTypeForm extends MyFrame implements ActionListener {
+class ProductTypeForm extends MyFrame implements ActionListener {
+    private final int cashierId;
     JTextField fieldJenisBarang;
     JButton addButton, backButton;
 
-    ProductTypeForm() {
+    ProductTypeForm(int cashierId) {
         super(600, 320);
+        this.cashierId = cashierId;
 
         JLabel title = new JLabel("Tambah Jenis Barang");
         title.setFont(title.getFont().deriveFont(18f));
@@ -53,10 +54,10 @@ public class ProductTypeForm extends MyFrame implements ActionListener {
                 WarehouseModel.addProductType(jenisBarang);
                 JOptionPane.showMessageDialog(null, "Data berhasil ditambahkan");
             }
-            new WarehousePage();
+            new WarehousePage(cashierId);
             dispose();
         } catch (Exception exception) {
-            JOptionPane.showMessageDialog(null, exception);
+            JOptionPane.showMessageDialog(null, exception.getMessage());
         }
     }
 }

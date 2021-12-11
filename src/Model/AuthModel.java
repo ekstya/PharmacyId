@@ -1,6 +1,5 @@
 package Model;
 
-import javax.swing.*;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -33,24 +32,26 @@ public class AuthModel extends BaseModel {
 
     }
 
-    public static void getAccount(String username, String password) throws SQLException{
+    public static int getAccount(String username, String password) throws SQLException{
+        int id = -1;
+
         PreparedStatement ps = connection.prepareStatement(
-                "SELECT * from kasir where username='"+username+"'AND password='"+password+"'");
+                "SELECT id FROM kasir " +
+                        "WHERE " +
+                        "username=? " +
+                        "AND " +
+                        "password=?"
+        );
+        ps.setString(1, username);
+        ps.setString(2, password);
         ResultSet rs = ps.executeQuery();
+
+
         if(rs.next()){
-            if(username.equals(rs.getString("username")) && password.equals(rs.getString("password"))){
-                JOptionPane.showMessageDialog(
-                        null,
-                        "Berhasil Login");
-            }
-            else {
-                JOptionPane.showMessageDialog(
-                        null,
-                        "username atau password salah"
-                );
-            }
+            id = rs.getInt("id");
         }
         ps.close();
+        return id;
     }
 
 }

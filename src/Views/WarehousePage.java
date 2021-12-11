@@ -11,12 +11,15 @@ import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Comparator;
 
-public class WarehousePage extends MyFrame implements ActionListener {
+class WarehousePage extends MyFrame implements ActionListener {
+    private final int cashierId;
+
     JButton addButton, backButton, updateButton;
     JTable table;
 
-    WarehousePage() throws SQLException {
+    WarehousePage(int cashierId) throws SQLException {
         super(600, 420);
+        this.cashierId = cashierId;
 
         JLabel title = new JLabel("Gudang");
         title.setFont(title.getFont().deriveFont(20f));
@@ -69,9 +72,9 @@ public class WarehousePage extends MyFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             if (e.getSource() == backButton) {
-                new DashboardPage();
+                new MenuOptionPage(cashierId);
             } else if (e.getSource() == addButton) {
-                new WarehouseForm();
+                new WarehouseForm(cashierId);
             } else if (e.getSource() == updateButton) {
                 int selectedRow = table.getSelectedRow();
                 if (selectedRow == -1) {
@@ -82,11 +85,11 @@ public class WarehousePage extends MyFrame implements ActionListener {
                 String jenisBarang = table.getValueAt(selectedRow, 2).toString();
                 String stok = table.getValueAt(selectedRow, 3).toString();
                 String harga = table.getValueAt(selectedRow, 4).toString();
-                new WarehouseForm().setUpdate(id, namaBarang, jenisBarang, stok, harga);
+                new WarehouseForm(cashierId).setUpdate(id, namaBarang, jenisBarang, stok, harga);
             }
             dispose();
         } catch (Exception exception) {
-            JOptionPane.showMessageDialog(null, exception);
+            JOptionPane.showMessageDialog(null, exception.getMessage());
         }
     }
 }
