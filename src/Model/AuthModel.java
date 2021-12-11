@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AuthModel extends BaseModel {
+    public static int val;
 
     public AuthModel() throws SQLException {
         super();
@@ -20,7 +21,7 @@ public class AuthModel extends BaseModel {
         ps.close();
     }
 
-    public static void addAccount(String username, String password) throws SQLException{
+    public static void addAccount(String username, String password) throws SQLException {
         PreparedStatement ps = connection.prepareStatement("INSERT INTO kasir"
                 + "(username, password)"
                 + "VALUES (?,?)");
@@ -53,5 +54,4 @@ public class AuthModel extends BaseModel {
         ps.close();
         return id;
     }
-
 }

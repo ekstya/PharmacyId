@@ -51,7 +51,6 @@ public class LoginPage extends MyFrame implements ActionListener {
         setVisible(true);
     }
 
-    @Override
     public void actionPerformed(ActionEvent e) {
         try {
             if (e.getSource() == loginButton) {

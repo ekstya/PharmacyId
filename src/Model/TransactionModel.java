@@ -80,7 +80,7 @@ public class TransactionModel extends BaseModel {
         ArrayList<String[]> detailTransaction = new ArrayList<String[]>();
         PreparedStatement ps = connection.prepareStatement(
                 "SELECT * FROM detail_transaksi " +
-                        "WHERE id=?"
+                        "WHERE fk_id_transaksi=?"
         );
         ps.setInt(1, transactionId);
         ResultSet rs = ps.executeQuery();

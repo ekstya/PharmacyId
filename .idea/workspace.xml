@@ -1,37 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="36a7fe06-837e-4d1d-bef9-4985f395929b" name="Changes" comment="">
+    <list default="true" id="832e37e4-1767-4516-a35e-3f0e5a8c599c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/Assets/log-out.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/Assets/package.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/Assets/shopping-cart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/DashboardPage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuButton.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/ProductTypeForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/ProductTypeForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/TransactionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/TransactionForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/TransactionPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/TransactionPage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehousePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehousePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/AuthModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/TransactionModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Model/WarehouseModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/DetailTransactionPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/LoginPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MenuOptionPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/MyFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/ProductTypeForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/RegisterPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/TransactionForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/TransactionPage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehouseForm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PharmacyId/Views/WarehousePage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/AuthModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/AuthModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/TransactionModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/TransactionModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/WarehouseModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/WarehouseModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Assets/log-out.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Assets/package.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/Assets/shopping-cart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/DashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/MenuOptionPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Views/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ProductTypeForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ProductTypeForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/RegisterPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/RegisterPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/TransactionForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TransactionForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/TransactionPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/TransactionPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/WarehouseForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WarehouseForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/WarehousePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/WarehousePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,9 +48,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/out/production/PharmacyId/Model/BaseModel.class" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
@@ -127,6 +114,7 @@
       <workItem from="1639130832350" duration="850000" />
       <workItem from="1639131932240" duration="1331000" />
       <workItem from="1639140516015" duration="10305000" />
+      <workItem from="1639178803040" duration="11257000" />
     </task>
     <servers />
   </component>

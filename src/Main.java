@@ -13,7 +13,7 @@ public class Main {
             new AuthModel();
             new WarehouseModel();
             new TransactionModel();
-            System.out.println("Inisialisasi database berhasil");
+            System.out.println("Program berhasil dijalankan");
         } catch (Exception e) {
             System.out.println("Terjadi Kesalahan\n" + e.getMessage());
             JOptionPane.showMessageDialog(
