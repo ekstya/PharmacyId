@@ -20,7 +20,7 @@ public class WarehouseModel extends BaseModel {
         ps = connection.prepareStatement(
                 "CREATE TABLE IF NOT EXISTS barang(" +
                         "id SERIAL PRIMARY KEY," +
-                        "nama_barang VARCHAR(30) UNIQUE NOT NULL," +
+                        "nama_barang VARCHAR(70) UNIQUE NOT NULL," +
                         "harga INTEGER NOT NULL," +
                         "stok INTEGER NOT NULL," +
                         "fk_id_jenis_barang INTEGER NOT NULL REFERENCES jenis_barang(id)" +
@@ -59,6 +59,7 @@ public class WarehouseModel extends BaseModel {
             products.add(line);
         }
 
+        ps.close();
         return products.toArray(new String[0][0]);
     }
 
@@ -73,6 +74,7 @@ public class WarehouseModel extends BaseModel {
             productsTypes.add(rs.getString("nama_jenis"));
         }
 
+        ps.close();
         return productsTypes.toArray(new String[0]);
     }
 
@@ -85,6 +87,7 @@ public class WarehouseModel extends BaseModel {
         );
         ps.setString(1, namaJenis);
         ps.executeUpdate();
+        ps.close();
     }
 
 
@@ -100,6 +103,7 @@ public class WarehouseModel extends BaseModel {
         ps.setInt(3, stok);
         ps.setInt(4, fk_id_jenis_barang);
         ps.executeUpdate();
+        ps.close();
     }
 
 
@@ -122,6 +126,8 @@ public class WarehouseModel extends BaseModel {
         ps.setInt(4, fk_id_jenis_barang);
         ps.setInt(5, id);
         ps.executeUpdate();
+
+        ps.close();
     }
 
 
@@ -137,6 +143,8 @@ public class WarehouseModel extends BaseModel {
         } else {
             throw new SQLException("id tidak ditemukan");
         }
+
+        ps.close();
         return fk_id_jenis_barang;
     }
 }

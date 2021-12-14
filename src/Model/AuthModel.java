@@ -5,7 +5,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AuthModel extends BaseModel {
-    public static int val;
 
     public AuthModel() throws SQLException {
         super();
@@ -33,7 +32,7 @@ public class AuthModel extends BaseModel {
 
     }
 
-    public static int getAccount(String username, String password) throws SQLException{
+    public static int getAccount(String username, String password) throws SQLException {
         int id = -1;
 
         PreparedStatement ps = connection.prepareStatement(
@@ -48,7 +47,7 @@ public class AuthModel extends BaseModel {
         ResultSet rs = ps.executeQuery();
 
 
-        if(rs.next()){
+        if (rs.next()) {
             id = rs.getInt("id");
         }
         ps.close();

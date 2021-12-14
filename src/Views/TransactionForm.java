@@ -110,7 +110,7 @@ class TransactionForm extends MyFrame implements ActionListener {
 
                 String namaBarang = productsTable.getValueAt(rowIndex, 1).toString();
                 for (int i=0; i < transactionTable.getRowCount(); i++) {
-                    if (namaBarang == transactionTable.getValueAt(i, 0)) {
+                    if (namaBarang == transactionTable.getValueAt(i, 1)) {
                         throw new Exception("Barang sudah ditambahkan");
                     }
                 }
